@@ -1,0 +1,31 @@
+{
+  "name": "faux-base",
+  "version": "1.0.0",
+  "description": "a simple notes server for the Github Note Taker app from the egghead.io course...",
+  "engines": {
+    "node": "6.3.0",
+    "npm": "3.10.5"
+  },
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Richard Hess eswat2@gmail.com (https://about.me/richardhess)",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-sslify": "^1.1.0",
+    "mongoose": "^4.5.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eswat2/faux-base"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}
