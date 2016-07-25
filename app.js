@@ -21,12 +21,12 @@ if (process.env.PORT) {
   app.use(enforce.HTTPS({ trustProtoHeader: true }));
 }
 
-app.get('/notes/:username', function (req, res, next) {
-  notes.get(req, res, next);
+app.get('/keys', function (req, res, next) {
+  notes.keys(req, res, next);
 });
 
-app.get('/notes', function (req, res, next) {
-  notes.keys(req, res, next);
+app.get('/notes/:username', function (req, res, next) {
+  notes.get(req, res, next);
 });
 
 app.post('/notes', function (req, res, next) {
@@ -38,7 +38,7 @@ var mock = {
   why:'wanted a simple solution that was not tied to firebase',
   who:'Richard Hess (aka. eswat2)',
   api:[
-    { url:'/notes',      verb:'GET',  what:'list of keys' },
+    { url:'/keys',       verb:'GET',  what:'list of keys' },
     { url:'/notes',      verb:'POST', what:'creates/updates a new note container' },
     { url:'/notes/:key', verb:'GET',  what:'fetch the note container for this key' }
   ]
