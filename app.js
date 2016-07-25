@@ -1,6 +1,7 @@
 var express    = require('express');
 var enforce    = require('express-sslify');
 var bodyParser = require('body-parser');
+var cors       = require('cors');
 
 var notes = require('./notes_db');
 var port  = process.env.PORT ? JSON.parse(process.env.PORT) : 8042;
@@ -13,6 +14,7 @@ var app  = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors());
 
 // Use enforce.HTTPS({ trustProtoHeader: true }) in case you are behind
 // a load balancer (e.g. Heroku). See further comments below
