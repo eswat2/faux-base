@@ -1,4 +1,7 @@
 # faux-base
+[![Dependency Status](https://dependencyci.com/github/eswat2/faux-base/badge)](https://dependencyci.com/github/eswat2/faux-base)
+[![Heroku](https://heroku-badge.herokuapp.com/?app=faux-base&style=flat&svg=1)](https://faux-base.herokuapp.com)
+
 a simple notes server to support the Github Note Taker app from the egghead.io course...
 
 ```
@@ -7,6 +10,35 @@ npm install -g nodemon
 
 npm install
 sh demon
+```
+
+### Deployed:
+
+the server has been deployed and is running here:  [faux-base](https://faux-base.herokuapp.com/)
+
+```json
+{
+  "what": "a simple notes server for the Github Note Taker app built in an egghead.io class",
+  "why": "wanted a simple solution that was not tied to firebase",
+  "who": "Richard Hess (aka. eswat2)",
+  "api": [
+    {
+      "url": "/keys",
+      "verb": "GET",
+      "what": "list of keys"
+    },
+    {
+      "url": "/notes",
+      "verb": "POST",
+      "what": "creates/updates a new note container"
+    },
+    {
+      "url": "/notes/:key",
+      "verb": "GET",
+      "what": "fetch the note container for this key"
+    }
+  ]
+}
 ```
 
 ### Reference:
