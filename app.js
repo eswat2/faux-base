@@ -39,6 +39,7 @@ var mock = {
   what:'a simple notes server for the Github Note Taker app built in an egghead.io class',
   why:'wanted a simple solution that was not tied to firebase',
   who:'Richard Hess (aka. eswat2)',
+  repo:'https://github.com/eswat2/faux-base',
   api:[
     { url:'/keys',       verb:'GET',  what:'list of keys' },
     { url:'/notes',      verb:'POST', what:'creates/updates a new note container' },
