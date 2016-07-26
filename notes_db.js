@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 var db = null;
-var hook = null;
 
 var noteSchema = mongoose.Schema({
     user: String,
@@ -82,10 +81,6 @@ function postHandler(req, res, next) {
   postNote(user, values, function(err, object) {
     if (!err) {
       if (object) {
-        // NOTE:  if the hook function is set, call it... [ for websocket ]
-        if (hook) {
-          hook(object);
-        }
         res.json(object);
       }
       else {
@@ -98,16 +93,11 @@ function postHandler(req, res, next) {
   })
 }
 
-function setHook(func) {
-  hook = func;
-}
-
 var api = {
   connect: connect,
   get: getHandler,
   keys: keysHandler,
-  post: postHandler,
-  hook: setHook
+  post: postHandler
 }
 
 module.exports = api;

@@ -14,13 +14,10 @@
   "author": "Richard Hess eswat2@gmail.com (https://about.me/richardhess)",
   "dependencies": {
     "body-parser": "^1.15.2",
-    "bufferutil": "^1.2.1",
     "cors": "^2.7.1",
     "express": "^4.14.0",
     "express-sslify": "^1.1.0",
-    "mongoose": "^4.5.5",
-    "utf-8-validate": "^1.2.1",
-    "ws": "^1.1.1"
+    "mongoose": "^4.5.5"
   },
   "repository": {
     "type": "git",
