@@ -1,5 +1,6 @@
 var express    = require('express');
 var enforce    = require('express-sslify');
+var wsServer   = require('ws').Server;
 var bodyParser = require('body-parser');
 var cors       = require('cors');
 
@@ -52,6 +53,30 @@ app.all('*', function (req, res, next) {
   res.json(mock);
 })
 
+var wss = null;
+
+function updateHandler(obj) {
+  var msg = JSON.stringify({
+    id:obj.id,
+    values:obj.values
+  });
+
+  wss.clients.forEach((client) => {
+    client.send(msg);
+  });
+}
+
 app.listen(port, function () {
   console.log('FauxBase Server is running on port ' + port + '!');
+
+  wss = new wsServer({ server: app });
+
+  wss.on('connection', (ws) => {
+    console.log('-- wss:  Client connected');
+    ws.on('close', () => console.log('-- wss:  Client disconnected'));
+  });
+
+  notes.hook(updateHandler);
+
+  console.log('WebSocket Server is running...');
 });
