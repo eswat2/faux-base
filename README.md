@@ -21,6 +21,7 @@ the server has been deployed and is running here:  [faux-base](https://faux-base
   "what": "a simple notes server for the Github Note Taker app built in an egghead.io class",
   "why": "wanted a simple solution that was not tied to firebase",
   "who": "Richard Hess (aka. eswat2)",
+  "repo": "https://github.com/eswat2/faux-base",
   "api": [
     {
       "url": "/keys",
