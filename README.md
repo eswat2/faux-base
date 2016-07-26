@@ -12,6 +12,15 @@ npm install
 sh demon
 ```
 
+### Features:
+
+- simple notes api built on [**mongoose**](http://mongoosejs.com/)
+- api supports CORS
+- notes are persisted to [**mlab**](https://mlab.com/)
+- code to enforce SSL, leveraging heroku's certs
+- default response is JSON describing the server api
+
+
 ### Deployed:
 
 the server has been deployed and is running here:  [faux-base](https://faux-base.herokuapp.com/)
